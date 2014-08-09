@@ -9,6 +9,7 @@ namespace ImageCompressor.Job {
         public event EventHandler<CompressionResult> Finished;
 
         public void CompressFile(string sourceFile) {
+            Trace.TraceInformation("optimizing source file: [{0}]", sourceFile);
             string targetFile = Path.ChangeExtension(Path.GetTempFileName(), Path.GetExtension(sourceFile));
 
             ProcessStartInfo start = new ProcessStartInfo("cmd") {

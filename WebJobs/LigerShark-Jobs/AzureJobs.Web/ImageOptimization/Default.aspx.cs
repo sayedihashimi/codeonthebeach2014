@@ -52,6 +52,7 @@ namespace AzureJobs.Web
                 string ext = Path.GetExtension(file).ToLowerInvariant();
 
                 if (_extensions.Contains(ext))
+                    System.Diagnostics.Trace.TraceInformation("Deleting file: [{0}]", file);
                     File.Delete(file);
             }
 
